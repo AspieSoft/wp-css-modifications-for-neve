@@ -1,8 +1,3 @@
-.site-header [data-row-id="main"] .container {
-	font-size: 1.5em;
-	height: 100%;
-}
-
 a {
 	text-decoration: none !important;
 	transition: color 0.3s;
