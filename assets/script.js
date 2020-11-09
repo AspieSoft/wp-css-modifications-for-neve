@@ -1,0 +1,80 @@
+;(function($){
+  const adminBar = $('#wpadminbar');
+
+  const desktopMenuContainer = $('.header-bottom[data-show-on="desktop"]');
+  const desktopMenu = $('.header-bottom-inner', desktopMenuContainer);
+
+  const mobileMenuContainer = $('.header-bottom[data-show-on="mobile"]');
+  const mobileMenu = $('.header-bottom-inner', mobileMenuContainer);
+
+  let lastTop = 0;
+  function setStickyMenu(){
+    let windowScroll = $(window).scrollTop();
+
+    let menuContainer, menu;
+    if(window.innerWidth < 960){
+      menuContainer = mobileMenuContainer;
+      menu = mobileMenu;
+    }else{
+      menuContainer = desktopMenuContainer;
+      menu = desktopMenu;
+    }
+
+    let menuTop = menuContainer.offset().top;
+
+    let changeMenuState = 0;
+    let setTopStr = '0';
+    if(adminBar.length && window.innerWidth > 600){
+      let offset = adminBar.height();
+      if(windowScroll+offset > menuTop){
+        changeMenuState = 1;
+        setTopStr = offset+'px';
+      }else if(windowScroll+offset < lastTop){
+        changeMenuState = -1;
+        setTopStr = offset+'px';
+      }
+    }else{
+      if(windowScroll > menuTop){
+        changeMenuState = 1;
+      }else if(windowScroll < lastTop){
+        changeMenuState = -1;
+      }
+    }
+
+    if(changeMenuState === 1){
+      lastTop = menuTop;
+
+      menuContainer.css({
+        height: menuContainer.height()+'px',
+      });
+
+      menu.css({
+        position: 'fixed',
+        top: setTopStr,
+        left: '0',
+        right: '0',
+        'z-index': '10000',
+      });
+    }else if(changeMenuState === -1){
+      lastTop = 0;
+
+      menu.css({
+        position: '',
+        top: '',
+        left: '',
+        right: '',
+      });
+
+      menuContainer.css({
+        height: '',
+      });
+    }
+  }
+
+  $(document).ready(function(){
+    setStickyMenu();
+    $(window).on('scroll', setStickyMenu);
+    $(window).resize(setStickyMenu);
+  });
+
+})(jQuery);
