@@ -61,3 +61,29 @@ body, .wrapper {
 .site-title-mobile-menu:hover {
 	color: #e8e8e8 !important;
 }
+
+
+/* elementor */
+
+.elementor-column-gap-default {
+	margin: 0 !important;
+	max-width: 100% !important;
+}
+
+.single-page-container {
+	padding: 0 50px;
+}
+
+.elementor-widget-video .elementor-wrapper {
+	pointer-events: none !important;
+}
+
+.elementor-widget-video::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.15);
+}
