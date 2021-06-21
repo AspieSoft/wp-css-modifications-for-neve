@@ -1,4 +1,4 @@
-=== Css Modifications For Neve ===
+=== Css Modifications For Neve (Alpha) ===
 Contributors: AspieSoft
 Tags: css, js, neve, theme, modify, sticky-header
 Requires at least: 3.0.1
