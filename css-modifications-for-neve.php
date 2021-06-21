@@ -3,9 +3,9 @@
 * @package CssModificationsForNeve
 */
 /*
-Plugin Name: Css Modifications For Neve
+Plugin Name: Css Modifications For Neve (Alpha)
 Description: Css and JS modifications for Neve.
-Version: 1.0
+Version: 0.0.1
 Author: AspieSoft
 Author URI: https://www.aspiesoft.com
 License: GPLv2 or later
