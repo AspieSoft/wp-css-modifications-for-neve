@@ -25,10 +25,10 @@ button, input, textarea {
 }
 
 .nv-nav-search {
-	background: none;
-	border: none;
-	box-shadow: none;
-	transform: translate(32px, -40px);
+	background: none !important;
+	border: none !important;
+	box-shadow: none !important;
+	transform: translate(32px, -40px) !important;
 }
 
 .navbar-toggle, .navbar-toggle:hover {
