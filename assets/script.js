@@ -20,7 +20,13 @@
       menu = desktopMenu;
     }
 
-    let menuTop = menuContainer.offset().top;
+    let menuTop = (function(){
+			let offset = menuContainer.offset();
+			if(offset){
+				return offset.top
+			}
+			return 0;
+		})();
 
     let changeMenuState = 0;
     let setTopStr = '0';
