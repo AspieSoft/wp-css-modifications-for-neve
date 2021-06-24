@@ -5,7 +5,7 @@
 /*
 Plugin Name: Css Modifications For Neve (Alpha)
 Description: Css and JS modifications for Neve.
-Version: 0.0.1
+Version: 0.0.2
 Author: AspieSoft
 Author URI: https://www.aspiesoft.com
 License: GPLv2 or later
@@ -42,8 +42,8 @@ if(!class_exists('CssModificationsForNeve')){
     }
     
     function enqueue(){
-      wp_enqueue_style('CssModificationsForNeve', plugins_url('/assets/style.css', __FILE__), null, '1.0');
-      wp_enqueue_script('CssModificationsForNeve', plugins_url('/assets/script.js', __FILE__), array('jquery'), '1.0', true);
+      wp_enqueue_style('CssModificationsForNeve', plugins_url('/assets/style.css', __FILE__), null, '0.0.2');
+      wp_enqueue_script('CssModificationsForNeve', plugins_url('/assets/script.js', __FILE__), array('jquery'), '0.0.2', true);
     }
 
   }
