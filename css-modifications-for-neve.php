@@ -4,7 +4,7 @@
 */
 /*
 Plugin Name: Css Modifications For Neve (Alpha)
-Description: Css and JS modifications for Neve.
+Description: Css and JS modifications for The Neve Wordpress Theme.
 Version: 0.0.2
 Author: AspieSoft
 Author URI: https://www.aspiesoft.com
