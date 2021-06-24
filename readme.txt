@@ -9,7 +9,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://buymeacoffee.aspiesoft.com
 
-Css and JS modifications for Neve.
+Css and JS modifications for The Neve Wordpress Theme.
 
 == Installation ==
 1. Upload plugin to the /wp-content/plugins
