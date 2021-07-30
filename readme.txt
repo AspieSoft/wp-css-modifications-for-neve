@@ -11,7 +11,6 @@ Donate link: https://buymeacoffee.aspiesoft.com
 
 Css and JS modifications for The Neve Wordpress Theme.
 
-
 == Installation ==
 1. Upload plugin to the /wp-content/plugins
 2. Activate the plugin through the "Plugins" menu in WordPress
