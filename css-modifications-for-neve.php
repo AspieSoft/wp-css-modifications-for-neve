@@ -44,10 +44,10 @@ if(!class_exists('CssModificationsForNeve')){
     }
 
     function enqueue(){
-      wp_enqueue_style('CssModificationsForNeve', plugins_url('/assets/style.css', __FILE__), null, $ver);
-      wp_enqueue_style('CssModificationsForNeveThumbnail', plugins_url('/assets/post-thumbnail.css', __FILE__), null, $ver);
+      wp_enqueue_style('CssModificationsForNeve', plugins_url('/assets/style.css', __FILE__), null, $this->ver);
+      //wp_enqueue_style('CssModificationsForNeveThumbnail', plugins_url('/assets/post-thumbnail.css', __FILE__), null, $this->ver);
 
-      wp_enqueue_script('CssModificationsForNeve', plugins_url('/assets/script.js', __FILE__), array('jquery'), $ver, true);
+      wp_enqueue_script('CssModificationsForNeve', plugins_url('/assets/script.js', __FILE__), array('jquery'), $this->ver, true);
     }
 
   }
