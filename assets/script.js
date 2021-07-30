@@ -83,4 +83,13 @@
     $(window).resize(setStickyMenu);
   });
 
+
+  /* new: jul 30, 2021 */
+  $(document).ready(function(){
+    const body = $('body');
+    if(body.hasClass('custom-background')){
+      body.append('<div style="display: block; position: fixed; z-index: -10; top: 100px; left: 0; bottom: 0; right: 0; transform: translateY(100px); background-image: url(\''+body.style['background-image']+'\'); background-position: center center; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;"></div>');
+    }
+  });
+
 })(jQuery);
