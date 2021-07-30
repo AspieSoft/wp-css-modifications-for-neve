@@ -166,3 +166,7 @@ textarea {
 .nv-nav-wrap .neve-mm-description {
 	display: none !important;
 }
+
+.cover-post:after {
+	background-color: rgba(0, 0, 0, 0.5) !important;
+}
