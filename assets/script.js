@@ -1,11 +1,11 @@
 ;(function($){
   const adminBar = $('#wpadminbar');
 
-  const desktopMenuContainer = $('.header-bottom[data-show-on="desktop"], .header-main[data-show-on="desktop"]');
-  const desktopMenu = $('.header-bottom-inner, .header-main-inner', desktopMenuContainer);
+  const desktopMenuContainer = $('.header-main[data-show-on="desktop"]');
+  const desktopMenu = $('.header-main-inner', desktopMenuContainer);
 
-  const mobileMenuContainer = $('.header-bottom[data-show-on="mobile"], .header-main[data-show-on="mobile"]');
-  const mobileMenu = $('.header-bottom-inner, .header-main-inner', mobileMenuContainer);
+  const mobileMenuContainer = $('.header-main[data-show-on="mobile"]');
+  const mobileMenu = $('.header-main-inner', mobileMenuContainer);
 
   let lastTop = 0;
   function setStickyMenu(){

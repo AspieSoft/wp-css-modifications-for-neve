@@ -37,7 +37,7 @@ if(!class_exists('CssModificationsForNeve')){
 
   class CssModificationsForNeve{
 
-    private $ver = '0.1.2';
+    private $ver = '0.1.3';
 
     function register(){
       add_action('wp_enqueue_scripts', array($this, 'enqueue'));
