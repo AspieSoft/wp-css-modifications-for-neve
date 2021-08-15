@@ -20,6 +20,8 @@
       menu = desktopMenu;
     }
 
+    menu.css('background-color', menuContainer.css('background-color'));
+
     let menuTop = (function(){
 			let offset = menuContainer.offset();
 			if(offset){
