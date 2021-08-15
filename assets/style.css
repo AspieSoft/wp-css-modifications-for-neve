@@ -170,3 +170,10 @@ textarea {
 .cover-post:after {
 	background-color: rgba(0, 0, 0, 0.5) !important;
 }
+
+
+/* new: aug 15, 2021 */
+footer, #site-footer, body {
+	overflow: hidden !important;
+	padding: 0 !important;
+}
