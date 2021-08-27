@@ -104,4 +104,30 @@
 		}
 	});
 
+
+  /* new: aug 27, 2021 */
+	// fix issue with mobile menu not opening
+	$(document).ready(function(){
+		let lastClick = 0;
+		$('.menu-mobile-toggle, .navbar-toggle').on('click', function(){
+			let now = new Date().getTime();
+			if(now - 100 < lastClick){
+				return;
+			}
+			lastClick = now;
+			if($('.menu-mobile-toggle').hasClass('is-active-2')){
+				$('.header-menu-sidebar').removeAttr('style');
+				$('body').removeClass('is-menu-sidebar').addClass('hiding-header-menu-sidebar');
+				setTimeout(function(){$('body').removeClass('is-menu-sidebar').addClass('hiding-header-menu-sidebar');}, 10);
+				setTimeout(function(){$('body').removeClass('is-menu-sidebar').removeClass('hiding-header-menu-sidebar');}, 500);
+				$('.menu-mobile-toggle').removeClass('is-active').removeClass('is-active-2');
+			}else{
+				$('.header-menu-sidebar').css({transform: 'none', visibility: 'visible'});
+				$('body').addClass('is-menu-sidebar');
+				setTimeout(function(){$('body').addClass('is-menu-sidebar');}, 10);
+				$('.menu-mobile-toggle').addClass('is-active').addClass('is-active-2');
+			}
+		});
+	});
+
 })(jQuery);
