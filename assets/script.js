@@ -80,6 +80,23 @@
         height: '',
       });
     }
+
+
+    /* new: oct 12, 2021 */
+    // set header background to non transparent main background
+    let nvDarkBackground = menu.css('background-color');
+    if(!nvDarkBackground || nvDarkBackground === 'rgba(0, 0, 0, 0)') {
+      nvDarkBackground = getComputedStyle(document.documentElement || document.body).getPropertyValue('--nv-dark-bg');
+    }
+
+    if(nvDarkBackground && nvDarkBackground !== 'rgba(0, 0, 0, 0)') {
+      nvDarkBackground = nvDarkBackground.replace(/rgba\(\s*([0-9.]+)\s*,\s*([0-9.]+)\s*,\s*([0-9.]+)\s*,\s*[0-9.]+\s*\)/g, 'rgb($1, $2, $3)')
+        .replace(/hsla\(\s*([0-9.]+)\s*,\s*([0-9.]+%?)\s*,\s*([0-9.]+%?)\s*,\s*[0-9.]+\s*\)/g, 'hsl($1, $2, $3)')
+        .replace(/#([a-fA-F0-9]{6})[a-fA-F0-9]{2}/g, '#$1')
+        .replace(/#([a-fA-F0-9]{3})[a-fA-F0-9]/g, '#$1');
+      $('.header').css('background-color', nvDarkBackground);
+    }
+
   }
 
   $(document).ready(function(){
@@ -132,16 +149,5 @@
       }
     });
   });
-
-
-  /* new: oct 12, 2021 */
-  let nvDarkBackground = getComputedStyle(document.documentElement || document.body).getPropertyValue('--nv-dark-bg');
-  if(nvDarkBackground && typeof nvDarkBackground === 'string') {
-    nvDarkBackground = nvDarkBackground.replace(/rgba\(\s*([0-9.]+)\s*,\s*([0-9.]+)\s*,\s*([0-9.]+)\s*,\s*[0-9.]+\s*\)/g, 'rgb($1, $2, $3)')
-      .replace(/hsla\(\s*([0-9.]+)\s*,\s*([0-9.]+%?)\s*,\s*([0-9.]+%?)\s*,\s*[0-9.]+\s*\)/g, 'hsl($1, $2, $3)')
-      .replace(/#([a-fA-F0-9]{6})[a-fA-F0-9]{2}/g, '#$1')
-      .replace(/#([a-fA-F0-9]{3})[a-fA-F0-9]/g, '#$1');
-    $('.header').css('background-color', nvDarkBackground);
-  }
 
 })(jQuery);

@@ -175,6 +175,5 @@ textarea {
 /* new: oct 12, 2021 */
 .header {
   z-index: 10000;
-  /* background-color: var(--nv-dark-bg); */
   background-color: #000000;
 }
