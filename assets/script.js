@@ -145,7 +145,7 @@
   /* new: aug 15, 2021 */
   // open all external links in a new window
   $(document).on('click', 'a', function(e) {
-    if(this.href && !this.href.startsWith('/') && !this.href.startsWith(window.location.origin)) {
+    if(this.href && (this.href.startsWith('https://') || this.href.startsWith('http://')) && !this.href.startsWith(window.location.origin)) {
       e.preventDefault();
       window.open(this.href, '_blank');
     }
