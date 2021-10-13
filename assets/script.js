@@ -1,4 +1,4 @@
-;(function($){
+; (function($) {
   const adminBar = $('#wpadminbar');
 
   const desktopMenuContainer = $('.header-main[data-show-on="desktop"]');
@@ -8,26 +8,26 @@
   const mobileMenu = $('.header-main-inner', mobileMenuContainer);
 
   let lastTop = 0;
-  function setStickyMenu(){
+  function setStickyMenu() {
     let windowScroll = $(window).scrollTop();
 
     let menuContainer, menu;
-    if(window.innerWidth < 960){
+    if(window.innerWidth < 960) {
       menuContainer = mobileMenuContainer;
       menu = mobileMenu;
-    }else{
+    } else {
       menuContainer = desktopMenuContainer;
       menu = desktopMenu;
     }
 
     let containerBG = menuContainer.css('background-color');
-    if(containerBG && containerBG !== 'rgba(0, 0, 0, 0)'){
+    if(containerBG && containerBG !== 'rgba(0, 0, 0, 0)') {
       menu.css('background-color', menuContainer.css('background-color'));
     }
 
-    let menuTop = (function(){
+    let menuTop = (function() {
       let offset = menuContainer.offset();
-      if(offset){
+      if(offset) {
         return offset.top
       }
       return 0;
@@ -35,28 +35,28 @@
 
     let changeMenuState = 0;
     let setTopStr = '0';
-    if(adminBar.length && window.innerWidth > 600){
+    if(adminBar.length && window.innerWidth > 600) {
       let offset = adminBar.height();
-      if(windowScroll+offset > menuTop){
+      if(windowScroll + offset > menuTop) {
         changeMenuState = 1;
-        setTopStr = offset+'px';
-      }else if(windowScroll+offset < lastTop){
+        setTopStr = offset + 'px';
+      } else if(windowScroll + offset < lastTop) {
         changeMenuState = -1;
-        setTopStr = offset+'px';
+        setTopStr = offset + 'px';
       }
-    }else{
-      if(windowScroll > menuTop){
+    } else {
+      if(windowScroll > menuTop) {
         changeMenuState = 1;
-      }else if(windowScroll < lastTop){
+      } else if(windowScroll < lastTop) {
         changeMenuState = -1;
       }
     }
 
-    if(changeMenuState === 1){
+    if(changeMenuState === 1) {
       lastTop = menuTop;
 
       menuContainer.css({
-        height: menuContainer.height()+'px',
+        height: menuContainer.height() + 'px',
       });
 
       menu.css({
@@ -66,7 +66,7 @@
         right: '0',
         'z-index': '10000',
       });
-    }else if(changeMenuState === -1){
+    } else if(changeMenuState === -1) {
       lastTop = 0;
 
       menu.css({
@@ -112,9 +112,21 @@
       $('.site-footer').css('background-color', nvDarkBackground);
     }
 
+
+    // make dropdown menu follow screen
+    $('.header-menu-sidebar.dropdown').css({
+      position: 'fixed',
+      top: (Math.max((($('#wpadminbar').height() || 0) + $('.header').height() - menu.height()) - windowScroll, 0) + menu.height()) + 'px',
+    });
+
+    /* $('.header-menu-sidebar.dropdown .header-menu-sidebar-inner').css({
+      // transition: 'max-width .3s cubic-bezier(.79,.14,.15,.86), max-height .3s cubic-bezier(.79,.14,.15,.86), opacity .3s cubic-bezier(.79,.14,.15,.86)',
+      'max-height': 'calc(100vh - ' + (($('#wpadminbar').height() || 0) + $('.header').height()) + 'px)'
+    }); */
+
   }
 
-  $(document).ready(function(){
+  $(document).ready(function() {
     setStickyMenu();
     $(window).on('scroll', setStickyMenu);
     $(window).resize(setStickyMenu);
@@ -122,18 +134,18 @@
 
 
   /* new: jul 30, 2021 */
-  $(document).ready(function(){
+  $(document).ready(function() {
     const body = $('body');
-    if(body.hasClass('custom-background')){
-      body.append('<div style="display: block; position: fixed; z-index: -10; top: -100px; left: 0; bottom: 0; right: 0; transform: translateY(100px); background-image: url(\''+body.css('background-image')+'\'); background-position: center center; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;"></div>');
+    if(body.hasClass('custom-background')) {
+      body.append('<div style="display: block; position: fixed; z-index: -10; top: -100px; left: 0; bottom: 0; right: 0; transform: translateY(100px); background-image: url(\'' + body.css('background-image') + '\'); background-position: center center; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;"></div>');
     }
   });
 
 
   /* new: aug 15, 2021 */
   // open all external links in a new window
-  $(document).on('click', 'a', function(e){
-    if(this.href && !this.href.startsWith('/') && !this.href.startsWith(window.location.origin)){
+  $(document).on('click', 'a', function(e) {
+    if(this.href && !this.href.startsWith('/') && !this.href.startsWith(window.location.origin)) {
       e.preventDefault();
       window.open(this.href, '_blank');
     }
