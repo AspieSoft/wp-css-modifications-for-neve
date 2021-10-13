@@ -5,7 +5,7 @@
 /*
 Plugin Name: Css Modifications For Neve (Beta)
 Description: Css and JS modifications for The Neve Wordpress Theme.
-Version: 0.3.3
+Version: 0.3.4
 Author: AspieSoft
 Author URI: https://www.aspiesoft.com
 License: GPLv2 or later
@@ -37,7 +37,7 @@ if(!class_exists('CssModificationsForNeve')){
 
   class CssModificationsForNeve{
 
-    private $ver = '0.3.3';
+    private $ver = '0.3.4';
 
     function register(){
       add_action('wp_enqueue_scripts', array($this, 'enqueue'));
