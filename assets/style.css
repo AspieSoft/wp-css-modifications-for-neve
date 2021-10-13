@@ -177,3 +177,8 @@ textarea {
   z-index: 10000;
   background-color: #000000;
 }
+
+.site-footer {
+  z-index: 10000;
+  background-color: #000000;
+}

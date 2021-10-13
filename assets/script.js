@@ -97,6 +97,21 @@
       $('.header').css('background-color', nvDarkBackground);
     }
 
+
+    // set footer background to non transparent main background
+    nvDarkBackground = $('.site-footer').css('background-color');
+    if(!nvDarkBackground || nvDarkBackground === 'rgba(0, 0, 0, 0)') {
+      nvDarkBackground = getComputedStyle(document.documentElement || document.body).getPropertyValue('--nv-dark-bg');
+    }
+
+    if(nvDarkBackground && nvDarkBackground !== 'rgba(0, 0, 0, 0)') {
+      nvDarkBackground = nvDarkBackground.replace(/rgba\(\s*([0-9.]+)\s*,\s*([0-9.]+)\s*,\s*([0-9.]+)\s*,\s*[0-9.]+\s*\)/g, 'rgb($1, $2, $3)')
+        .replace(/hsla\(\s*([0-9.]+)\s*,\s*([0-9.]+%?)\s*,\s*([0-9.]+%?)\s*,\s*[0-9.]+\s*\)/g, 'hsl($1, $2, $3)')
+        .replace(/#([a-fA-F0-9]{6})[a-fA-F0-9]{2}/g, '#$1')
+        .replace(/#([a-fA-F0-9]{3})[a-fA-F0-9]/g, '#$1');
+      $('.site-footer').css('background-color', nvDarkBackground);
+    }
+
   }
 
   $(document).ready(function(){
