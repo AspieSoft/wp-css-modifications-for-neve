@@ -127,7 +127,7 @@
 
   /* new: aug 27, 2021 */
   // fix issue with mobile menu not opening
-  $(document).ready(function(){
+  /* $(document).ready(function(){
     let lastClick = 0;
     $('.menu-mobile-toggle, .navbar-toggle').on('click', function(){
       let now = new Date().getTime();
@@ -148,6 +148,6 @@
         $('.menu-mobile-toggle').addClass('is-active').addClass('is-active-2');
       }
     });
-  });
+  }); */
 
 })(jQuery);
