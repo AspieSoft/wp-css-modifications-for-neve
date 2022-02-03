@@ -182,3 +182,10 @@ textarea {
   z-index: 10000;
   background-color: #000000;
 }
+
+
+/* new: feb 3, 2022 */
+.offline-indicator {
+  bottom: -5px;
+  padding-bottom: 25px;
+}
