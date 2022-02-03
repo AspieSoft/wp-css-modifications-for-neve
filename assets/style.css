@@ -186,6 +186,6 @@ textarea {
 
 /* new: feb 3, 2022 */
 .offline-indicator {
-  bottom: -5px;
-  padding-bottom: 25px;
+  bottom: -5px !important;
+  padding-bottom: 25px !important;
 }
